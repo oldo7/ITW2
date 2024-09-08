@@ -1,0 +1,1234 @@
+/*
+ * Login: xnemce08
+ */
+
+ body {
+   margin: 0px;
+   padding: 0px;
+   background-color: #6D4365;
+ }
+html{
+  scroll-behavior: smooth;
+}
+
+/* Navbar pouzivajuci sa pri malej obrazovke. Defaultne skryty */
+.topnav{
+  display: none;
+}
+
+ .section-title h4{
+   font-family: 'Ghost Clan', sans-serif;
+ }
+
+ /* Navbar pre velke obrazovky */
+ @media (min-width: 580px) {
+
+header {
+   position: sticky;
+   top: 0px;
+   z-index: 10;
+}
+
+ #navbar {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   left: 0px;
+   background-color: #351e34;
+ }
+ /* Dropdown menu polozky statistiky */
+ .dropdown{
+   display: inline;
+   position: relative;
+ }
+
+ .dropdown .dropbtn {
+   font-size: 16px;
+   border: none;
+   outline: none;
+   color: white;
+   padding: 0;
+   background-color: inherit;
+   font-family: inherit; /* Important for vertical align on mobile phones */
+   margin: 0; /* Important for vertical align on mobile phones */
+ }
+
+ .dropdown-content a {
+   background-color: #351e34;
+   text-transform: uppercase;
+   float: none;
+   color: white;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+   text-align: left;
+ }
+ 
+ .dropdown-content a:hover {
+   background-color: #94678B;
+ }
+ 
+ /* Na hover ukaze dropdown menu */
+ .dropdown:hover .dropdown-content {
+   display: block;
+   transition: 0.8s;
+ }
+
+ /* Content v dropdown menu. defaultne skryty */
+ .dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 100%;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+   left: -10px;
+ }
+
+ nav {
+   height: 100%;
+   margin-right: auto;
+   
+ }
+ /* Odkazy v navbare */
+ nav a {
+   font-family: 'Courier New', Courier, monospace;
+   text-transform: uppercase;
+   display: inline-block;
+   text-decoration: none;
+   color: white;
+   font-size: 20px;
+   height: 100%;
+   padding-top: 15px;
+   padding-bottom: 15px;
+ }
+
+
+ nav li {
+   display: inline;
+   font-size: 20px;
+   margin: 0;
+   height: fit-content;
+ }
+
+ nav a:hover {
+   transition: 0.3s;
+   text-shadow: 0px 0px 14px rgba(255,255,255,1);
+   cursor: pointer;
+ }
+/* Flexbox pre polozky navbaru */
+ nav ul {
+   max-width: 850px;
+   margin: 0;
+   margin-left: 13%;
+   display: flex;
+   justify-content:space-between;
+ }
+ }
+
+ /* Uvod */
+
+ #about {
+   padding-top: 5%;
+   background-color: #351e34;
+   padding-left: 15%;
+   padding-bottom: 20px;
+   padding-right: 15%;
+ }
+
+ /* Hlavny nadpis */
+ #about .section-title h2 a{
+  font-family: 'Hammer Scout', sans-serif;
+  font-size: 105px;
+  color: white;
+  margin: 0px 7%;
+  text-decoration: none;
+}
+ #about .section-title h3{
+   margin-top: 10px;
+   font-size: 40px;
+   color: rgb(255, 152, 187);
+ }
+
+ #about span{
+   margin-top: 10px;
+   font-size: 19px;
+   color: rgb(158, 158, 158);
+ }
+
+ /* Statistiky */
+
+ .statistics {
+   margin-top: 50px;
+   width: 60%;
+   margin-left: auto;
+   margin-right: auto;
+   border: 2px solid rgb(92, 92, 92);
+   background-color: rgb(0, 0, 0);
+   color: white;
+ }
+
+ .statistics .section-title {
+   padding: 15px;
+   border-bottom: 2px solid rgb(92, 92, 92);
+ }
+
+ .statistics .section-title h4{
+  text-align: left;
+}
+ 
+ .statistics .section-title h4 a {
+   font-size: 40px;
+   text-decoration: none;
+   color: white;
+ }
+
+ /* Grid, v ktorom su jednotlive hodnoty statistik */
+ .statistics .statistics-items {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   font-family: 'Grota Sans Alt', sans-serif;
+ }
+ 
+ .statistics .stat-item {
+   padding: 10px;
+ }
+
+ /* Nazov statistiky */
+ .statistics .stat-item span {
+   color: grey;
+   text-transform: uppercase;
+   font-weight: bold;
+ }
+
+ /* Hodnota statistiky */
+ .statistics .stat-item .value {
+   color:white;
+   font-size: 30px;
+   font-weight: bold;
+   text-transform: uppercase;
+ }
+
+ /* Vnutorna cast (pozadie) baru zobrazujuceho percentil. Vzdy rovnaka dlzka */
+ .statistics .stat-item .rank-bar {
+   max-width: 250px;
+   width: 100%;
+   background-color: orange;
+   height: 3px;
+   position: relative;
+ }
+
+ /* Vonkajsia (prednejsia) cast baru. Dlzka podla percentilu jednotlivych statistik */
+ .statistics .stat-item .rank-bar .bar-progress {
+   width: 99.9%;
+   background-color: blue;
+   height: 3px;
+ }
+
+ .statistics .stat-item:nth-child(3) .rank-bar .bar-progress {
+   width: 98.8%;
+ }
+
+ .statistics .stat-item:nth-child(7) .rank-bar .bar-progress {
+   width: 98.9%;
+ }
+
+ .statistics .stat-item:nth-child(8) .rank-bar .bar-progress {
+   width: 97.9%;
+ }
+
+ .statistics .stat-item:nth-child(9) .rank-bar .bar-progress {
+   width: 91.0%;
+ }
+
+ .statistics .stat-item:nth-child(10) .rank-bar .bar-progress {
+   width: 91.0%;
+ }
+
+ .statistics .stat-item:nth-child(5) .rank-bar .bar-progress {
+   width: 99.7%;
+   background-color: blue;
+   height: 3px;
+ }
+
+ /* Pri hoveri na bar zobrazi hodnotu percentilu */
+ .statistics .stat-item .rank-bar .percentile {
+   display: none;
+ }
+
+ .statistics .stat-item .rank-bar:hover .percentile {
+   display: block;
+   position: absolute;
+   left: 75px;
+   background-color: rgb(54, 54, 54);
+   padding: 10px;
+   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   text-transform: uppercase;
+   top: 10px;
+ }
+
+ /* Rank statistiky */
+ .statistics .stat-item .rank {
+   font-family: Arial, Helvetica, sans-serif;
+   text-transform: uppercase;
+   font-style: normal;
+   font-size: 14px;
+   padding-top: 5px;
+ }
+
+ .statistics .stat-item .rank::before {
+   content: '#';
+ }
+
+ /* Obrazok ranku k MMR statistikam (MMR statistiky) */
+ .statistics .stat-item img {
+   width: 39px;
+   height: 100%;
+   display:inline-block;
+ }
+
+ /* Pozicia obrazku pomocou flexbox */
+ .statistics .stat-item:nth-child(11) .value {
+   display: flex;
+ }
+
+ .statistics .stat-item:nth-child(11) .value span{
+   color: white;
+   padding-right: 10px;
+ }
+
+ .statistics .stat-item:nth-child(12) .value {
+   display: flex;
+ }
+
+ .statistics .stat-item:nth-child(12) .value img{
+   padding-left: 10px;
+ }
+
+ .operators h3 {
+  padding-top: 50px;
+   color: white;
+   font-family: 'Ghost Clan', sans-serif;
+   text-align: left;
+   font-size: 35px;
+   width: 80%;
+   margin: 0px auto;
+ }
+
+ /* Ikonky operatorov su riesene cez absolutne pozicovanie, aby sa pri
+ zvacsovani na hover navzajom neovplyvnovali */
+ @media (min-width: 580px) {
+ .operator-items {
+   position: relative;
+   width: 80%;
+   margin-left: auto;
+   margin-right: auto;
+   
+ }
+
+ .operators-item{
+   top: 0px;
+   position: absolute;
+   width: 200px;
+   height: 200px;
+   padding: 25px;
+ }
+
+ /* Po hoveri sa odstrani padding a zvacsi velkost obrazku */
+ .operators-item:hover{
+   padding: 0px;
+   width: 250px;
+   height: 250px;
+   transition: 1s;
+   z-index: 1;
+ }
+
+ /* Absolutne pozicie jednotlivych ikon */
+ .operators-item:nth-child(1){
+   left: 0px;
+ }
+
+ .operators-item:nth-child(2){
+   left: 20%;
+ }
+
+ .operators-item:nth-child(3){
+   left: 40%;
+ }
+
+ .operators-item:nth-child(4){
+   left: 60%;
+ }
+
+ .operators-item:nth-child(5){
+   left: 80%;
+ }
+
+ .operators-item span{
+   display: none;
+ }
+
+ .operators-item img{
+   width: 100%;
+   height: 100%;
+ }
+
+ /* Popis ikon na hover */
+ .operators-item img:hover + span{
+   display: block;
+   font-size: 42px;
+   color: white;
+   text-align: center;
+   text-transform: uppercase;
+   font-family: 'Grota Sans Alt', sans-serif;
+   font-weight: bold;
+   font-style: italic;
+   text-shadow: 1px 2px 5px rgba(0,0,0,0.61);
+   transition: 1s;
+ }
+}
+
+/* Dosiahnute vysledky */
+
+#achievments{
+  margin-top: 200px;
+}
+
+#achievments .section-title{
+  padding-top: 100px;
+   font-size: 60px;
+   color: white;
+   margin: 0px auto;
+   text-align: center;
+}
+
+.past-mmr {
+   width: 60%;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+/* Jednotlive riadky v sekcii 'Dosiahnute vysledky' */
+.mmr-item {
+   display: flex;
+   border-top: 1px solid grey;
+   border-bottom: 1px solid grey;
+   padding: 20px 0px;
+}
+
+/* Kazdy druhy je zarovnany na opacnu stranu ako ostatne */
+.mmr-item:nth-child(even) {
+   text-align: right;
+   display: flex;
+   border-top: 1px solid grey;
+   border-bottom: 1px solid grey;
+   padding: 20px 0px;
+   flex-direction: row-reverse;
+}
+
+.mmr-item img {
+   width: 200px;
+   height: 200px;
+   padding-left: 50px;
+   padding-right: 50px;
+   object-fit: fill;
+}
+
+.mmr-item .rank-desc {
+   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   text-transform: uppercase;
+}
+
+.mmr-item .rank-desc h4{
+   font-size: 50px;
+   margin:0;
+   margin-top: 20px;
+   color: rgb(193, 241, 18);
+}
+
+/* Farby nadpisov jednotlivych riadkov */
+.mmr-item:nth-child(2) .rank-desc h4{
+   color: rgb(179, 38, 68);
+}
+
+.mmr-item:nth-child(3) .rank-desc h4{
+   color: rgb(25, 63, 107);
+}
+
+.mmr-item:nth-child(4) .rank-desc h4{
+   color: rgb(177, 88, 16);
+}
+
+.mmr-item:nth-child(5) .rank-desc h4{
+   color: rgb(65, 21, 146);
+}
+
+.mmr-item .rank-desc h5{
+   font-size: 35px;
+   display: inline-block;
+   margin:0;
+   color: rgb(255, 255, 255);
+}
+
+/* Stylovanie jednotlivych poloziek v riadkoch sekcie 'Dosiahnute vysledky' */
+.mmr-item .rank-desc .rank{
+   margin-left: 15px;
+   font-size: 25px;
+   display: inline-block;
+   color: rgb(56, 55, 55);
+   font-weight: bold;
+}
+
+.mmr-item .rank-desc .games {
+   display: block;
+   margin-top: 5px;
+}
+
+.mmr-item .rank-desc .matches{
+   font-size: 20px;
+   color: rgb(31, 31, 31);
+   font-weight: bold;
+   margin-right: 10px;
+}
+
+.mmr-item .rank-desc .matches::after{
+   content:" • ";
+   margin-left: 10px;
+}
+
+.mmr-item .rank-desc .k-d{
+   display: inline-block;
+   font-size: 20px;
+   color: rgb(31, 31, 31);
+   font-weight: bold;
+}
+
+/* Tlacitko "viac informacii" na kazdom riadku */
+.mmr-item .mmr-details {
+   background-color: rgb(230, 230, 230);
+   height: 60px;
+   width: 200px;
+   min-width: 170px;
+   margin: auto 80px auto auto;
+   text-align: center;
+   line-height: 60px;
+   border-radius: 10px;
+   border: 1px solid black;
+   font-size: 18px;
+   font-weight: bold;
+   text-decoration: none;
+   color: black;
+   font-family: 'Courier New', Courier, monospace;
+}
+
+/* Kedze na kazdom druhom riadku je ine zarovnanie textu, musi byt opacny aj smer margin */
+.mmr-item:nth-child(even) .mmr-details {
+   margin: auto auto auto 80px;
+}
+
+.mmr-item .mmr-details:hover {
+   background-color: #493248;
+   border: 1px solid #351e34;
+   transition: 0.3s;
+}
+
+/* Ponukane zluzby */
+
+#services {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#services .section-title{
+  padding-top: 100px;
+  font-size: 60px;
+  color: white;
+  margin: 0px auto;
+  text-align: center;
+}
+
+#services h2{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 35px;
+  margin: 0;
+}
+
+#services .description h3{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 25px;
+  color: rgb(158, 158, 158);
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+/* Rozdelenie sekcie na 2 rovnake stlpce */
+.service-items{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 30px;
+}
+
+/* Tabulky s cenami */
+.price-list {
+  text-align: center;
+  background-color: black;
+  color: white;
+  border: 1px solid rgb(158, 158, 158);
+  height: fit-content;
+  padding: 10px 10px 30px 10px;
+  font-family: 'Grota Sans Alt', sans-serif;
+  opacity: 0.75;
+}
+
+.price-list:hover {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.price-list h3{
+  color: white;
+  font-size: 30px;
+  margin: 0px;
+  font-family: 'Ghost Clan', sans-serif;
+  margin-bottom: 8px;
+}
+
+.service-items .description a{
+  color: rgb(158, 158, 158);
+}
+
+/* Popis stlpca boosting */
+.boosting{
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Popis stlpca coaching */
+.Coaching{
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.price-list table{
+  width: 100%;
+  height: fit-content;
+}
+
+.price-list td, .price-list th{
+  padding: 5px;
+}
+
+.price-list th{
+  border-bottom: 1px solid grey;
+}
+
+/* Upravenie poradia v gride tak, aby cennik k danej sekcie bol pod
+popisom tejto sekcie */
+
+.price-list .Coaching{
+  order: 2;
+}
+
+.price-list.boosting-price-list{
+  order: 3;
+}
+
+.price-list.coaching-price-list{
+  order: 4;
+}
+
+.price-list.boosting-price-list table{
+  margin-top: 12px;
+}
+
+.price-list.boosting-price-list th:nth-child(1){
+  border-bottom: none;
+}
+
+.price-list.boosting-price-list td, .price-list.boosting-price-list th{
+  width: 17%;
+}
+
+.price-list.boosting-price-list td:nth-child(1), .price-list.boosting-price-list th:nth-child(1){
+  width: 29%;
+}
+
+/* Zaujmy */
+
+#interests {
+  width: 80%;
+  margin: 0 auto 100px auto;
+}
+
+#interests .section-title {
+  padding-top: 100px;
+  margin: 0px auto;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+
+.section-title h4{
+  font-size: 60px;
+  color: white;
+  margin: 0px auto;
+  text-align: center;
+}
+
+/* Jednotlive polozky su v gride, maju rovnaku sirku a su zarovnane na stred */
+#interests .content{
+  display: grid;
+  grid-template-columns: repeat(3,minmax(350px, 450px));
+  grid-column-gap: 10%;
+  justify-content: center;
+}
+
+/* Stylovanie "karticky" jedneho zaujmu */
+.interests-section{
+  height: 500px;
+  opacity: 0.8;
+  border: 2px solid black;
+  position: relative;
+}
+
+/* Pozadie jednotlivych karticiek */
+.interests-section:nth-child(1){
+  background-image: url(../img/cs2.jpg);
+}
+
+.interests-section:nth-child(2){
+  background-image: url(../img/programming.jpg);
+}
+
+.interests-section:nth-child(3){
+  background-image: url(../img/literatura.jpg);
+}
+
+/* Nadpis jednotlivych karticiek, vzdy viditelny, umiestneny absolutne voci karticke na stred dole */
+.interests-section h3{
+  margin: 0px;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-family: 'Grota Sans Alt', sans-serif;
+  text-transform: uppercase;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Text karticky sa zobrazi po hoveri */
+.interests-section span{
+  display: block;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 22px;
+  padding: 15px;
+  opacity: 0;
+  text-shadow: 0px 0px 9px rgba(0,0,0,1);
+}
+
+.interests-section:hover span{
+  opacity: 1;
+  transition: 0.7s;
+}
+
+.interests-section:hover{
+  opacity: 1;
+  transition: 0.7s;
+}
+
+/* Po hoveri sa tiez ukaze tien, ktoreho farba zavisi na pozadi karticky */
+.interests-section:nth-child(1):hover{
+  box-shadow: 0px 0px 45px 11px rgba(250,167,73,1);
+}
+
+.interests-section:nth-child(2):hover{
+  box-shadow: 0px 0px 45px 11px rgb(0, 0, 0,1);
+}
+
+.interests-section:nth-child(3):hover{
+  box-shadow: 0px 0px 45px 11px rgb(133, 107, 60,1);
+}
+
+/* Kontakt */
+
+/* Cela sekcia ma fixed pozadie */
+#contact {
+  width: 100%;
+  background-attachment: fixed;
+  background-image: url(../img/r6background.jpg);
+  height: 100vh;
+  border-top: 7px solid black;
+  position: relative;
+}
+
+/* Hlavny nadpis sekcie */
+#contact .section-title h4{
+  font-weight: normal;
+  font-family: 'Grota Sans Alt', sans-serif;
+  text-transform: uppercase;
+  display: block;
+  padding-top: 25vh;
+  padding-left: 40px;
+  text-align: left;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-size: 10vh;
+  text-shadow: 0px 0px 9px rgba(0,0,0,1);
+}
+
+/* Javascript zariadi, ze pri scrollnuti viac ako 100px od spodku sa
+priradi dokumentu trieda .bottom. Ak je aktivna, (teda je scrollnute naspodok)  zmizne navbar */
+.bottom #navbar {
+  opacity: 0;
+}
+
+/* ikonky s odkazmi */
+#contact .links{
+  display: none;
+  padding-top: 35px;
+  width: 40%;
+  animation-name: myscroll;
+  animation-duration: 0.8s;
+  animation-iteration-count: unset;
+  padding-bottom: 50px;
+}
+
+.bottom #contact .links{
+  display: block;
+}
+
+/* Stylovanie obrazku ikoniek */
+#contact .links li a img{
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+#contact .links li:nth-child(1) a img{
+  width: 87px;
+  height: 50px;
+  margin-right: 0px;
+}
+
+#contact .links li:nth-child(5) a img{
+  width: 60px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+#contact ul{
+  display: flex;
+  justify-content:space-between;
+}
+
+#contact li {
+  display: inline;
+}
+
+/* Definicia animacii pre prichod textu na spodku stranky ked tam uzivatel scrollne */
+@keyframes myscroll {
+  0% {
+      padding-top: 150px;
+      opacity: 0;
+  }
+
+  to {
+      padding-top: 35px;
+      opacity: 1;
+  }
+}
+
+@keyframes myscroll2 {
+  0% {
+      padding-top: 200px;
+      opacity: 0;
+  }
+
+  to {
+      padding-top: 0px;
+      opacity: 1;
+  }
+}
+
+#contact .email .description{
+  color: white;
+  font-size: 25px;
+  margin-left: 50px;
+  text-shadow: 0px 0px 9px rgba(0,0,0,1);
+  font-family: 'Ghost Clan', sans-serif;
+  margin-bottom: 50px;
+}
+
+#contact .email{
+  display: none;
+  animation-name: myscroll2;
+  animation-duration: 1s;
+  animation-iteration-count: unset
+}
+
+.bottom #contact .email{
+  display: block;
+}
+
+/* Stylovanie emailovej adresy */
+#contact .email a{
+  color: white;
+  font-size: 45px;
+  margin-left: 70px;
+  padding-top: 50px;
+  text-shadow: 0px 0px 9px rgba(0,0,0,1);
+  font-family: 'Hammer Scout', sans-serif;
+  text-decoration: none;
+}
+
+#contact .email a:hover{
+  color: #edbfff;
+  transition: 0.5s;
+  text-shadow: 0px 0px 9px rgba(83,83,83,1);
+}
+
+footer {
+  position: absolute;
+  color: white;
+  display: inline-block;
+  bottom: 10px;
+  left: 0;
+  width: 90vw;
+}
+
+footer .content{
+  margin-left: 100px;
+  display: flex;
+  width: 100%;
+}
+
+footer .content span:nth-child(2){
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+
+/* Styly pre malu obrazovku (napr. mobilny telefon). threshold malej obrazovky je nastaveny na
+580 pixelov sirky */
+@media (max-width: 580px) {
+    /* Pri malej obrazovke sa pouziva iny navbar, ktory sa zobrazi po kliknuti na hamburger menu */
+    /*Trieda upravujuca hamburger menu */
+    .navbutton{
+    position: fixed;
+    width: 77px;
+    height: 77px;
+    top: 15px;
+    right: 15px;
+    z-index: 50;
+  }
+
+  .navbutton a{
+    width: 95%;
+    height: 84%;
+    display: block;
+    font-size: 30px;
+    text-align: center;
+    background-color: white;
+    border-radius: 7px;
+    padding: 6px 2px 6px 2px;
+    border: 2px solid black;
+    opacity: 0.9;
+  }
+
+  /* "Ikona" hamburger menu je vytvorena z 3 po sebe iducich div-ov, kde kazdy predstavuje jednu ciaru */
+  .navbutton a div {
+    width: 60px;
+    height: 9px;
+    background-color: black;
+    margin: 10px auto;
+  }
+
+  /* Menu zobrazujuce sa po kliknuti na hamburger menu */
+  .topnav {
+    display: block;
+    overflow: hidden;
+    background-color: #270a26;
+    border: 2px solid black;
+    position: fixed;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    height: fit-content;
+    z-index: 49;
+  }
+
+  .topnav ul {
+    display: inline;
+  }
+  
+  /* Odkazy v menu su defaultne skryte. O zobrazenie po kliknuti na
+  hamburger menu sa stara javascript */
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  /* Jednotlive odkazy v menu */
+  .topnav a {
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 30px;
+    display: block;
+    height: fit-content;
+  }
+
+  /* Navbar pouzivajuci sa pri velkej obrazovke je teraz skryty */
+  #navbar{
+    display: none;
+  }
+
+  /* Upravenie velkosti pisma ,medzier a celkovej velkosti jednotlivych elementov, 
+  pre lepsie zobrazenie na malej obrazovke */
+ #about .section-title h2 a{
+  font-size: 230%;
+  margin: 0px 0px;
+}
+ #about .section-title h3{
+   font-size: 150%;
+ }
+
+ .statistics {
+   width: 98%;
+ }
+
+
+ .operators h3 {
+   font-size: 25px;
+ }
+
+ /* Operator items su namiesto absolutnej pozicie rozlozene pomocou jednoducheho gridu */
+ .operator-items {
+   position: relative;
+   width: 90%;
+   margin-left: auto;
+   margin-right: auto;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+ }
+
+ .operators-item{
+   width: 100%;
+   height: 100%;
+ }
+
+ .operators-item span{
+   display: none;
+ }
+
+ .operators-item img{
+   width: 100%;
+   height: 100%;
+ }
+
+
+/* Pri dosiahnutych vysledkoch su text, obrazky a medzery v jednotlivych riadkoch mensie */
+#achievments{
+  margin-top: 0px;
+}
+
+#achievments .section-title{
+  padding-top: 20px;
+}
+
+#achievments .section-title h4{
+   font-size: 40px;
+   color: white;
+   margin: 0px auto;
+   text-align: center;
+}
+
+.past-mmr {
+   width: 100%;
+}
+
+.mmr-item img {
+   width: 120px;
+   height: 120px;
+   padding-left: 10px;
+   padding-right: 10px;
+}
+
+.mmr-item .rank-desc {
+   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   text-transform: uppercase;
+}
+
+.mmr-item .rank-desc h4{
+   font-size: 30px;
+}
+
+.mmr-item .rank-desc h5{
+   font-size: 25px;
+}
+
+.mmr-item .rank-desc .rank{
+   font-size: 15px;
+}
+
+.mmr-item .rank-desc .games {
+   margin-top: 0px;
+}
+
+.mmr-item .mmr-details {
+  display: none;
+}
+
+/* Zmensenie/odstranenie medzier v stlpcoch sluzieb */
+#services .section-title h4{
+  font-size: 40px;
+}
+
+#services .section-title{
+  padding-top: 30px;
+}
+
+#services h2{
+  font-size: 25px;
+}
+
+#services .description h3{
+  font-size: 20px;
+  margin-left: 0px;
+}
+
+/* Grid ma teraz iba jeden stlpec pre lepsie zobrazovanie na uzkom zariadeni */
+.service-items{
+  grid-template-columns: 1fr;
+  grid-column-gap: 0px;
+}
+
+/* Kedze uz je iba jeden stlpec je nutne upravit aj poradie elementov, aby tabulka bola vzdy pod korespondujucou sekciou */
+.service-items .Coaching{
+  margin-top: 20px;
+  order: 3;
+}
+
+.price-list.boosting-price-list{
+  order: 2;
+}
+
+.price-list.coaching-price-list{
+  order: 4;
+}
+
+.section-title h4{
+  font-size: 40px;
+}
+
+/* Pri zaujmoch je tiez teraz iba jeden stlpec */
+#interests .content{
+  grid-template-columns: 1fr;
+  grid-row-gap: 3%;
+  height: 1214px;
+}
+
+.interests-section{
+  height: 400px;
+  opacity: 1;
+}
+
+.interests-section span{
+  opacity: 1;
+  font-size: 20px;
+  padding: 0px;
+}
+
+.interests-section h3{
+  font-size: 30px;
+  bottom: 10px;
+}
+
+
+#contact {
+  height: fit-content;
+  padding-bottom: 70px;
+  background-attachment:scroll;
+}
+
+/* V sekcii kontakt je zmensene pismo a medzery */
+#contact .section-title h4{
+  padding-top: 15vh;
+  padding-left: 20px;
+  font-size: 40px;
+}
+
+/* Animacie pre jednoduchost a responzivnost odstranene, text je teraz viditelny stale */
+#contact .links{
+  display: inline;
+  width: 100%;
+  animation-name: none;
+}
+
+.bottom #contact .links{
+  display: inline;
+}
+
+#contact .links li:nth-child(5) a img{
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+#contact .links li:nth-child(6) a img{
+  margin-right: 18px;
+  margin-left: 15px;
+}
+
+/* Flex-wrap zapnuty, pretoze nie vzdy sa vsetky ikonky vojdu na obrazovku pri uzkej obrazovke */
+#contact ul{
+  padding-left: 0px;
+  justify-content:flex-start;
+  flex-wrap:wrap;
+  align-content: flex-start;
+}
+
+#contact li {
+  min-width: 70px;
+  min-height: 60px;
+}
+
+#contact .email .description{
+  font-size: 20px;
+  margin-left: 0px;
+  margin-bottom: 20px;
+}
+
+#contact .email{
+  display: block;
+  animation-name: none;
+}
+
+#contact .email a{
+  font-size: 22px;
+  margin-left: 0px;
+}
+
+/* Footer zmeneny aby sa vosiel na malu obrazovku */
+footer {
+  width: 90%;
+}
+
+footer .content{
+  margin-left: 0px;
+  font-size: 10px;
+}
+
+footer .content span:nth-child(2){
+  margin-right: 0px;
+}
+}
